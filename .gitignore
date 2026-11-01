@@ -1,0 +1,16 @@
+# godot (4.0+) specific ignores
+.godot/
+~**
+**.tmp
+
+# annoying ass shit from deleting files idk
+.fuse_hidden**
+
+# backup files
+**~
+
+# vscode shit
+.vscode
+
+# macOS stuf
+**.DS_Store
