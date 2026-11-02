@@ -287,15 +287,15 @@ text = "Toggle Fullscreen"
 layout_mode = 2
 text = "F11"
 
-[node name="module_select" type="HBoxContainer" parent="ScrollContainer/Margin/VBox" unique_id=1858958916]
+[node name="mod_switch" type="HBoxContainer" parent="ScrollContainer/Margin/VBox" unique_id=1858958916]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Label" type="Label" parent="ScrollContainer/Margin/VBox/module_select" unique_id=1318491467]
+[node name="Label" type="Label" parent="ScrollContainer/Margin/VBox/mod_switch" unique_id=1318491467]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Open Module Selector"
+text = "Open Mod Switcher"
 
-[node name="0" type="Button" parent="ScrollContainer/Margin/VBox/module_select" unique_id=1650021964]
+[node name="0" type="Button" parent="ScrollContainer/Margin/VBox/mod_switch" unique_id=1650021964]
 layout_mode = 2
 text = "F9"
