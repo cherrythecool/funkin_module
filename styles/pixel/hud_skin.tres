@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="HUDSkin" format=3 uid="uid://bx66ixfj76oix"]
 
 [ext_resource type="Script" uid="uid://bwjjpqxupvxcc" path="res://engine/gameplay/huds/hud_skin.gd" id="1_nl67s"]
+[ext_resource type="AudioStream" uid="uid://cyi45o54w32s7" path="res://mods/funkin/styles/pixel/pause_theme.ogg" id="1_pslw8"]
 
 [resource]
 script = ExtResource("1_nl67s")
-countdown_textures = null
-countdown_sounds = null
+pause_music = ExtResource("1_pslw8")
 metadata/_custom_type_script = "uid://bwjjpqxupvxcc"

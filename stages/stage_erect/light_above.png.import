@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp7t5wpilryw5"
-path="res://.godot/imported/orangeLight.png-006403f76fe4871ebe75949d07291324.ctex"
+uid="uid://bidx1tkuqgdgg"
+path="res://.godot/imported/light_above.png-940308709fb92ec68a539785e569eb2d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods/funkin/stages/stage_erect/orangeLight.png"
-dest_files=["res://.godot/imported/orangeLight.png-006403f76fe4871ebe75949d07291324.ctex"]
+source_file="res://mods/funkin/stages/stage_erect/light_above.png"
+dest_files=["res://.godot/imported/light_above.png-940308709fb92ec68a539785e569eb2d.ctex"]
 
 [params]
 

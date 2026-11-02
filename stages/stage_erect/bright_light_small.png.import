@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bj8w8e6620cr"
-path="res://.godot/imported/lightgreen.png-ecd73fc9d6eccdac24ae20bf4d88d8bd.ctex"
+uid="uid://bkq11tqsokn86"
+path="res://.godot/imported/bright_light_small.png-6c53ab1a6975cf49270fb30bec366e2c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mods/funkin/stages/stage_erect/lightgreen.png"
-dest_files=["res://.godot/imported/lightgreen.png-ecd73fc9d6eccdac24ae20bf4d88d8bd.ctex"]
+source_file="res://mods/funkin/stages/stage_erect/bright_light_small.png"
+dest_files=["res://.godot/imported/bright_light_small.png-6c53ab1a6975cf49270fb30bec366e2c.ctex"]
 
 [params]
 
