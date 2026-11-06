@@ -13,6 +13,6 @@ func refresh(data: Dictionary) -> void:
 	rank_label.text = "Rank: %s" % data.get("rank", "N/A")
 
 	if "accuracy" in data and data["accuracy"] is not String:
-		accuracy_label.text = "Accuracy: %.5f%%" % data["accuracy"]
+		accuracy_label.text = "Accuracy: %.2f%%" % data["accuracy"]
 	else:
 		accuracy_label.text = "Accuracy: N/A"
