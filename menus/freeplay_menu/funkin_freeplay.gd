@@ -74,7 +74,7 @@ func _ready() -> void:
 
 	if song_nodes.is_empty():
 		active = false
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		SceneManager.transition_to_file("uid://b7fwxsepnt38j")
 		printerr("Freeplay has no songs, returning.")
 		return
@@ -100,14 +100,14 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action(&"menu_cancel"):
 		active = false
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		SceneManager.transition_to_file("uid://b7fwxsepnt38j")
 	if event.is_action(&"menu_accept"):
 		active = false
 		select_song.call_deferred()
 	if event.is_action(&"freeplay_open_characters") and open_character_select:
 		active = false
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		SceneManager.transition_to_file("uid://62vvv8x8t7nm")
 
 	if event.is_action(&"menu_up") or event.is_action(&"menu_down"):
@@ -149,7 +149,7 @@ func change_selection(amount: int = 0) -> void:
 	track_delay_timer.start(0.0)
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()
 	for i: int in song_nodes.size():
 		var node: FreeplaySongNode = song_nodes[i]
 		node.target_y = i - index
@@ -231,7 +231,7 @@ func _load_tracks() -> void:
 
 	previous_song = current_song
 
-	MenuAudio.music.stop()
+	MenuSounds.music.stop()
 	music.stream = Tracks.load_tracks(current_song, songs_folder)
 	music.play()
 

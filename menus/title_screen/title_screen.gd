@@ -29,7 +29,7 @@ func _ready() -> void:
 		SceneManager.swap_to_file("uid://dasf7d5k8p30f")
 		return
 
-	var music_player: AudioStreamPlayer = MenuAudio.music
+	var music_player: AudioStreamPlayer = MenuSounds.music
 	if in_intro or not music_player.playing:
 		Conductor.reset()
 		music_player.play()
@@ -67,7 +67,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			skip_intro()
 		else:
 			transitioning = true
-			MenuAudio.confirm.play()
+			MenuSounds.confirm.play()
 
 			if SaveData.get_save_value(&"core", "flashing_lights"):
 				flash.color = Color(Color.WHITE, 0.5)

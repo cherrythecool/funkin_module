@@ -55,4 +55,4 @@ func select_key(b: Button, k: StringName, s: int) -> void:
 
 	selecting = true
 	button.text = "[Press a Key]"
-	MenuAudio.confirm.play()
+	MenuSounds.confirm.play()

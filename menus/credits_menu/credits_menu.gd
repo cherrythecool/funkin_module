@@ -10,7 +10,7 @@ static var selected: int = 1
 
 
 func _ready() -> void:
-	MenuAudio.music.stop()
+	MenuSounds.music.stop()
 	music.play()
 	change_selection()
 
@@ -18,7 +18,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&'menu_cancel'):
 		music.stop()
-		MenuAudio.music.play()
+		MenuSounds.music.play()
 		SceneManager.transition_to_file('uid://b7fwxsepnt38j')
 
 	if event.is_action_pressed(&'menu_accept'):
@@ -53,4 +53,4 @@ func change_selection(amount: int = 0) -> void:
 		change_selection(signi(amount))
 		return
 
-	MenuAudio.scroll.play()
+	MenuSounds.scroll.play()

@@ -36,7 +36,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action('menu_accept'):
 		var selection: CategoryIcon = get_child(selected) as CategoryIcon
 		if is_instance_valid(selection.category):
-			MenuAudio.confirm.play()
+			MenuSounds.confirm.play()
 			options_menu.active = false
 			active = false
 			selection.category.alive = true
@@ -52,7 +52,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			# 1005 = 285 + 720
 			category_tween.tween_property(self, 'position:y', 1005.0, 0.5)
 		else:
-			MenuAudio.cancel.play()
+			MenuSounds.cancel.play()
 
 
 func change_selection(amount: int = 0) -> void:
@@ -60,7 +60,7 @@ func change_selection(amount: int = 0) -> void:
 	section_label.text = get_child(selected).name.to_upper()
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()
 
 		section_label.modulate.a = 0.75
 		section_label.position.y = 40.0

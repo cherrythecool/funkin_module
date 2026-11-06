@@ -47,7 +47,7 @@ var start_freeplay: String
 func _ready() -> void:
 	var current_icon: Node2D = character_options.get_child(selected_x + (selected_y * 3))
 	selector.global_position = current_icon.global_position
-	MenuAudio.music.stop()
+	MenuSounds.music.stop()
 	start_freeplay = MainMenu.freeplay_scene
 
 	confirm.finished.connect(_on_confirm_finished)

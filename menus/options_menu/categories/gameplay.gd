@@ -49,7 +49,7 @@ func change_selection(amount: int = 0) -> void:
 	selected_option._focus()
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()
 
 
 func _update_items(delta: float) -> void:

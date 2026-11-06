@@ -14,8 +14,8 @@ var active: bool = true
 
 
 func _ready() -> void:
-	if not MenuAudio.music.playing:
-		MenuAudio.music.play()
+	if not MenuSounds.music.playing:
+		MenuSounds.music.play()
 
 	# thank you https://github.com/godotengine/godot-proposals/issues/12058#issuecomment-2748489241
 	# needed to recompute the layout manually to make sure that
@@ -35,12 +35,12 @@ func _unhandled_input(event: InputEvent) -> void:
 		change_selection(roundi(Input.get_axis(&"menu_up", &"menu_down")))
 
 	if event.is_action_pressed(&"menu_cancel"):
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		active = false
 		SceneManager.transition_to_file("uid://cxk008iuw4n7u")
 
 	if event.is_action_pressed(&"menu_accept"):
-		MenuAudio.confirm.play()
+		MenuSounds.confirm.play()
 		active = false
 		_press_animation()
 
@@ -52,7 +52,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _on_press(item: MainMenuButton) -> void:
 	if not item.accept():
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		active = true
 		_cancel_animation()
 
@@ -102,4 +102,4 @@ func change_selection(amount: int = 0) -> void:
 	camera.position.y = current_item.global_position.y
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()

@@ -27,4 +27,4 @@ func _select() -> void:
 		index = 0
 
 	value = list[wrapi(index + 1, 0, list.size())]
-	MenuAudio.confirm.play()
+	MenuSounds.confirm.play()

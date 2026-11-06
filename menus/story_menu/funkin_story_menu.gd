@@ -27,7 +27,7 @@ var active: bool = true
 
 
 func _ready() -> void:
-	var music_player: AudioStreamPlayer = MenuAudio.music
+	var music_player: AudioStreamPlayer = MenuSounds.music
 	if not music_player.playing:
 		Conductor.reset()
 		music_player.play()
@@ -68,14 +68,14 @@ func _unhandled_input(event: InputEvent) -> void:
 		return
 	if event.is_action('menu_cancel'):
 		active = false
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		SceneManager.transition_to_file("uid://b7fwxsepnt38j")
 	if event.is_action(&"menu_accept"):
 		active = false
 		_load_active_playlist()
 
 		if _load_first_song():
-			MenuAudio.confirm.play()
+			MenuSounds.confirm.play()
 
 			if SaveData.get_save_value(&"core", "flashing_lights"):
 				week_flash_timer.start()
@@ -183,7 +183,7 @@ func change_selection(amount: int = 0) -> void:
 	week_name_tween.tween_property(week_name, ^"visible_ratio", 1.0, 0.067 * week_name.text.length())
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()
 
 
 func _on_week_flash_timer_timeout() -> void:

@@ -18,7 +18,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action_pressed(&"menu_accept"):
 		active = false
-		MenuAudio.confirm.play()
+		MenuSounds.confirm.play()
 
 		match options[selected].name.to_lower():
 			&"yes":
@@ -31,7 +31,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action_pressed(&"menu_cancel"):
 		active = false
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		SceneManager.transition_to_file("uid://cxk008iuw4n7u")
 
 
@@ -41,4 +41,4 @@ func change_selection(amount: int = 0) -> void:
 	options[selected].modulate.a = 1.0
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()

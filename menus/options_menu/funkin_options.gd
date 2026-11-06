@@ -17,12 +17,12 @@ var lerped_vertical_scroll: float = 0.0
 
 
 func _ready() -> void:
-	MenuAudio.music.stream = load("uid://ddoyqrhrcjw1j")
-	MenuAudio.music.play()
+	MenuSounds.music.stream = load("uid://ddoyqrhrcjw1j")
+	MenuSounds.music.play()
 
 	Conductor.reset()
 	Conductor.tempo = 137.0
-	Conductor.target_audio = MenuAudio.music
+	Conductor.target_audio = MenuSounds.music
 	Conductor.beat_hit.connect(_on_beat_hit)
 
 	change_selection()
@@ -53,7 +53,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action_pressed(&"menu_cancel"):
 		active = false
-		MenuAudio.cancel.play()
+		MenuSounds.cancel.play()
 		SceneManager.transition_to_file(target_scene)
 		target_scene = DEFAULT_TARGET_SCENE
 
@@ -62,7 +62,7 @@ func change_selection(amount: int = 0) -> void:
 	selected = wrapi(selected + amount, 0, categories.get_child_count())
 
 	if amount != 0:
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()
 
 	for i: int in categories.get_child_count():
 		var child: CategoryIcon = categories.get_child(i)
@@ -76,7 +76,7 @@ func change_selection(amount: int = 0) -> void:
 
 func deselect_current() -> void:
 	active = true
-	MenuAudio.cancel.play()
+	MenuSounds.cancel.play()
 
 	var children: Array[Node] = section.get_children()
 	var tween: Tween = create_tween()\
@@ -91,7 +91,7 @@ func deselect_current() -> void:
 
 func select_current() -> void:
 	active = false
-	MenuAudio.confirm.play()
+	MenuSounds.confirm.play()
 
 	var tween: Tween = create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT).set_parallel()
 	tween.tween_property(interface, ^"position:x", -1280.0, 0.5)
@@ -107,5 +107,5 @@ func _on_beat_hit(_beat: int) -> void:
 
 
 func _exit_tree() -> void:
-	MenuAudio.music.stream = load("uid://dergcpn8f5cju")
-	MenuAudio.music.play()
+	MenuSounds.music.stream = load("uid://dergcpn8f5cju")
+	MenuSounds.music.play()

@@ -26,7 +26,7 @@ func _ready() -> void:
 func _select() -> void:
 	var index: int = maxi(list.find(value), 0)
 	value = list[wrapi(index + 1, 0, list.size())]
-	MenuAudio.confirm.play()
+	MenuSounds.confirm.play()
 
 
 func format_value() -> String:

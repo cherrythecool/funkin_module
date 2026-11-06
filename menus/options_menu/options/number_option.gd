@@ -51,7 +51,7 @@ var value: float:
 			value_label.text = "%s%s%s%s" % [left,
 					str(snapped(final_value, step)).pad_decimals(1), value_suffix, right]
 
-		MenuAudio.scroll.play()
+		MenuSounds.scroll.play()
 		_value_changed()
 
 
@@ -110,7 +110,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action(&"menu_accept") or event.is_action(&"menu_cancel"):
 		get_viewport().set_input_as_handled()
 		_select()
-		MenuAudio.confirm.play()
+		MenuSounds.confirm.play()
 
 
 func set_value(value_: Variant) -> void:

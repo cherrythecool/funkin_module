@@ -41,7 +41,7 @@ func _ready() -> void:
 
 func _select() -> void:
 	toggled = not toggled
-	MenuAudio.confirm.play()
+	MenuSounds.confirm.play()
 	update_animation()
 
 
