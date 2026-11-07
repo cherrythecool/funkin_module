@@ -3,6 +3,7 @@ extends Node
 
 func _ready() -> void:
 	DisplayServer.set_icon(load("uid://6hlha56pn1t4"))
+	get_window().title = "Friday Night Funkin'"
 
 	MenuSounds.music.stream = load("uid://dergcpn8f5cju")
 	MenuSounds.scroll.stream = load("uid://bmt2cyc46u6om")

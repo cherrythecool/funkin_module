@@ -6,6 +6,7 @@ static var index: int = 0
 static var difficulty_index: int = 0
 
 @export var open_character_select := true
+@export_file("*.tscn") var return_path: String = "uid://b7fwxsepnt38j"
 
 @export_dir var songs_folder: String = "res://mods/funkin/songs":
 	set(v):
@@ -101,7 +102,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action(&"menu_cancel"):
 		active = false
 		MenuSounds.cancel.play()
-		SceneManager.transition_to_file("uid://b7fwxsepnt38j")
+		SceneManager.transition_to_file(return_path)
 	if event.is_action(&"menu_accept"):
 		active = false
 		select_song.call_deferred()
